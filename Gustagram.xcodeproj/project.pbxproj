@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		2F66C36A270BA58600B3BC5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F66C369270BA58600B3BC5E /* AppDelegate.swift */; };
 		2F66C36C270BA58600B3BC5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F66C36B270BA58600B3BC5E /* SceneDelegate.swift */; };
-		2F66C36E270BA58600B3BC5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F66C36D270BA58600B3BC5E /* ViewController.swift */; };
 		2F66C371270BA58600B3BC5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F66C36F270BA58600B3BC5E /* Main.storyboard */; };
 		2F66C373270BA58900B3BC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F66C372270BA58900B3BC5E /* Assets.xcassets */; };
 		2F66C376270BA58900B3BC5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F66C374270BA58900B3BC5E /* LaunchScreen.storyboard */; };
+		2FD3CD2F270DE45000DDEA1C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3CD2E270DE45000DDEA1C /* FeedViewController.swift */; };
+		2FD3CD31270DE4ED00DDEA1C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3CD30270DE4ED00DDEA1C /* LoginViewController.swift */; };
+		2FD3CD33270E027A00DDEA1C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3CD32270E027A00DDEA1C /* CameraViewController.swift */; };
+		2FD3CD35270E13BD00DDEA1C /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3CD34270E13BD00DDEA1C /* PostCell.swift */; };
+		AE506A8436CC4BC00A15FAAE /* Pods_Gustagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E9ABAA43F19338977D6C33 /* Pods_Gustagram.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08709D2C1D3DB1DA67CCA23B /* Pods-Gustagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gustagram.debug.xcconfig"; path = "Target Support Files/Pods-Gustagram/Pods-Gustagram.debug.xcconfig"; sourceTree = "<group>"; };
 		2F66C366270BA58600B3BC5E /* Gustagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gustagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F66C369270BA58600B3BC5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F66C36B270BA58600B3BC5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2F66C36D270BA58600B3BC5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F66C370270BA58600B3BC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F66C372270BA58900B3BC5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F66C375270BA58900B3BC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F66C377270BA58900B3BC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FD3CD2E270DE45000DDEA1C /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		2FD3CD30270DE4ED00DDEA1C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2FD3CD32270E027A00DDEA1C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		2FD3CD34270E13BD00DDEA1C /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		65B83C6E642306AC5FD9752B /* Pods-Gustagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gustagram.release.xcconfig"; path = "Target Support Files/Pods-Gustagram/Pods-Gustagram.release.xcconfig"; sourceTree = "<group>"; };
+		A8E9ABAA43F19338977D6C33 /* Pods_Gustagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gustagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE506A8436CC4BC00A15FAAE /* Pods_Gustagram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,8 @@
 			children = (
 				2F66C368270BA58600B3BC5E /* Gustagram */,
 				2F66C367270BA58600B3BC5E /* Products */,
+				CD3108C8FA99A820BC72858E /* Pods */,
+				B34C21455DC475EFC278F5F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +69,35 @@
 		2F66C368270BA58600B3BC5E /* Gustagram */ = {
 			isa = PBXGroup;
 			children = (
+				2F66C36F270BA58600B3BC5E /* Main.storyboard */,
+				2F66C374270BA58900B3BC5E /* LaunchScreen.storyboard */,
 				2F66C369270BA58600B3BC5E /* AppDelegate.swift */,
 				2F66C36B270BA58600B3BC5E /* SceneDelegate.swift */,
-				2F66C36D270BA58600B3BC5E /* ViewController.swift */,
-				2F66C36F270BA58600B3BC5E /* Main.storyboard */,
+				2FD3CD30270DE4ED00DDEA1C /* LoginViewController.swift */,
+				2FD3CD2E270DE45000DDEA1C /* FeedViewController.swift */,
+				2FD3CD32270E027A00DDEA1C /* CameraViewController.swift */,
+				2FD3CD34270E13BD00DDEA1C /* PostCell.swift */,
 				2F66C372270BA58900B3BC5E /* Assets.xcassets */,
-				2F66C374270BA58900B3BC5E /* LaunchScreen.storyboard */,
 				2F66C377270BA58900B3BC5E /* Info.plist */,
 			);
 			path = Gustagram;
+			sourceTree = "<group>";
+		};
+		B34C21455DC475EFC278F5F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8E9ABAA43F19338977D6C33 /* Pods_Gustagram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD3108C8FA99A820BC72858E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08709D2C1D3DB1DA67CCA23B /* Pods-Gustagram.debug.xcconfig */,
+				65B83C6E642306AC5FD9752B /* Pods-Gustagram.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F66C37A270BA58900B3BC5E /* Build configuration list for PBXNativeTarget "Gustagram" */;
 			buildPhases = (
+				75EEB0EB7EB71725B56DD401 /* [CP] Check Pods Manifest.lock */,
 				2F66C362270BA58600B3BC5E /* Sources */,
 				2F66C363270BA58600B3BC5E /* Frameworks */,
 				2F66C364270BA58600B3BC5E /* Resources */,
+				CF5BDE3D0C754E835805DFDA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +168,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		75EEB0EB7EB71725B56DD401 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gustagram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF5BDE3D0C754E835805DFDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gustagram/Pods-Gustagram-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gustagram/Pods-Gustagram-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gustagram/Pods-Gustagram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2F66C362270BA58600B3BC5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F66C36E270BA58600B3BC5E /* ViewController.swift in Sources */,
 				2F66C36A270BA58600B3BC5E /* AppDelegate.swift in Sources */,
+				2FD3CD33270E027A00DDEA1C /* CameraViewController.swift in Sources */,
+				2FD3CD2F270DE45000DDEA1C /* FeedViewController.swift in Sources */,
+				2FD3CD31270DE4ED00DDEA1C /* LoginViewController.swift in Sources */,
 				2F66C36C270BA58600B3BC5E /* SceneDelegate.swift in Sources */,
+				2FD3CD35270E13BD00DDEA1C /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +364,7 @@
 		};
 		2F66C37B270BA58900B3BC5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08709D2C1D3DB1DA67CCA23B /* Pods-Gustagram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +393,7 @@
 		};
 		2F66C37C270BA58900B3BC5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65B83C6E642306AC5FD9752B /* Pods-Gustagram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
