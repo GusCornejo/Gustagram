@@ -14,7 +14,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var commentField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,7 +59,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(picker, animated: true, completion: nil)
     }
     
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
         
@@ -81,5 +79,4 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Pass the selected object to the new view controller.
     }
     */
-
 }

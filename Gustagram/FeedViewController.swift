@@ -21,10 +21,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadPosts()
-        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        loadPosts()
         
         myRefresControl.addTarget(self, action: #selector(loadPosts), for: .valueChanged)
         tableView.insertSubview(myRefresControl, at: 0)
@@ -106,5 +106,4 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
-
 }
