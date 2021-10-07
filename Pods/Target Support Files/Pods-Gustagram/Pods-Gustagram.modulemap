@@ -1,0 +1,6 @@
+framework module Pods_Gustagram {
+  umbrella header "Pods-Gustagram-umbrella.h"
+
+  export *
+  module * { export * }
+}
