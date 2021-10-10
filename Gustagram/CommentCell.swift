@@ -1,17 +1,16 @@
 //
-//  PostCell.swift
+//  CommentCell.swift
 //  Gustagram
 //
-//  Created by Gustavo Cornejo on 10/6/21.
+//  Created by Gustavo Cornejo on 10/10/21.
 //
 
 import UIKit
 
-class PostCell: UITableViewCell {
-    
-    @IBOutlet weak var photoView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var captionLabel: UILabel!
+class CommentCell: UITableViewCell {
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,4 +22,5 @@ class PostCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 }

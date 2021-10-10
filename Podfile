@@ -9,5 +9,6 @@ target 'Gustagram' do
 	
 	pod 'Parse'
 	pod 'AlamofireImage'
+	pod 'MessageInputBar'
 
 end
