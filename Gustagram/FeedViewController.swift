@@ -21,6 +21,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var selectedPost:PFObject!
     
     var numberOfPosts = Int()
+    var morePosts = true
     let myRefresControl:UIRefreshControl! = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -49,12 +50,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let query = PFQuery(className: "Posts")
         
         query.includeKeys(["author", "comments", "comments.author"])
+        query.addDescendingOrder("createdAt")
         query.limit = numberOfPosts
         query.findObjectsInBackground { posts, error in
             if posts != nil {
                 self.posts.removeAll()
                 self.posts = posts!
-                self.posts.reverse()
                 self.tableView.reloadData()
                 self.myRefresControl.endRefreshing()
             } else {
@@ -102,19 +103,22 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         commentBar.inputTextView.resignFirstResponder()
     }
     
-    /*
     func loadMorePosts() {
         
         numberOfPosts += 10
         
+        if numberOfPosts > posts.count {
+            morePosts = false
+        }
+        
         let query = PFQuery(className: "Posts")
         
-        query.includeKeys(["author"])
+        query.includeKeys(["author", "comments", "comments.author"])
+        query.addDescendingOrder("createdAt")
         query.limit = numberOfPosts
         query.findObjectsInBackground { posts, error in
             if posts != nil {
                 self.posts = posts!
-                self.posts.reverse()
                 self.tableView.reloadData()
             } else {
                 print("Error: \(String(describing: error?.localizedDescription))")
@@ -123,25 +127,22 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row + 1 == posts.count {
+        if indexPath.section + 1 == posts.count && morePosts == true {
             loadMorePosts()
         }
-    }*/
-    
-    //Logout
-
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         let query = PFQuery(className: "Posts")
         query.includeKeys(["author", "comments", "comments.author"])
-        query.limit = 20
+        query.addDescendingOrder("createdAt")
+        query.limit = numberOfPosts
         
         query.findObjectsInBackground { posts, error in
             if posts != nil {
                 self.posts = posts!
-                self.posts.reverse()
                 self.tableView.reloadData()
             }
         }
