@@ -77,7 +77,6 @@ class LoginViewController: UIViewController {
         let user = PFUser()
         user.username = usernameField.text
         user.password = passwordField.text
-        user["profilePic"] = URL
         
         user.signUpInBackground { success, error in
             if success {

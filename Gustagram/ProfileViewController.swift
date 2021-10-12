@@ -21,15 +21,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         profileNameLabel.text = user?.username
         
-        let imageFile = user!["image"] as! PFFileObject
-        if imageFile == nil {
-            
-        let urlString = imageFile.url!
-        let url = URL(string: urlString)!
-    
-        profilePicView.af_setImage(withURL: url)
-        }
-    
+        let imageData = profilePicView.image!.pngData()
+        let file = PFFileObject(name: "image.png", data: imageData!)
+        
+        user!["profilePic"] = file
+        
         profilePicView.layer.borderWidth = 1
         profilePicView.layer.masksToBounds = false
         profilePicView.layer.borderColor = UIColor.black.cgColor
@@ -42,7 +38,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let imageData = profilePicView.image!.pngData()
         let file = PFFileObject(name: "profileImage.png", data: imageData!)
         
-        user!["image"] = file
+        user!["profilePic"] = file
         
         user!.saveInBackground { (success, error) in
             if success {
