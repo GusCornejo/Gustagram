@@ -42,6 +42,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         myRefresControl.addTarget(self, action: #selector(loadPosts), for: .valueChanged)
         tableView.refreshControl = myRefresControl
+        
     }
     
     @objc func loadPosts() {
@@ -184,13 +185,26 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let user = post["author"] as! PFUser
             cell.usernameLabel.text = user.username
+            cell.usernameHeaderLabel.text = user.username
             cell.captionLabel.text = post["caption"] as! String
             
             let imageFile = post["image"] as! PFFileObject
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
             
+            let imageFile2 = user["profilePic"] as! PFFileObject
+            let urlString2 = imageFile2.url!
+            let url2 = URL(string: urlString2)!
+            
             cell.photoView.af_setImage(withURL: url)
+            cell.userPicView.af_setImage(withURL: url2)
+            
+            cell.userPicView.layer.borderWidth = 1
+            cell.userPicView.layer.masksToBounds = false
+            cell.userPicView.layer.borderColor = UIColor.black.cgColor
+            cell.userPicView.layer.cornerRadius =  cell.userPicView.frame.height/2
+            cell.userPicView.clipsToBounds = true
+            
             return cell
             
         } else if indexPath.row <= comments.count {
@@ -200,6 +214,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.commentLabel.text = comment["text"] as? String
             
             let user = comment["author"] as! PFUser
+            
+            let imageFile = user["profilePic"] as! PFFileObject
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            
+            cell.commentPicView.af_setImage(withURL: url)
+            
+            cell.commentPicView.layer.borderWidth = 1
+            cell.commentPicView.layer.masksToBounds = false
+            cell.commentPicView.layer.borderColor = UIColor.black.cgColor
+            cell.commentPicView.layer.cornerRadius =  cell.commentPicView.frame.height/2
+            cell.commentPicView.clipsToBounds = true
+            
             cell.nameLabel.text = user.username
             return cell
             

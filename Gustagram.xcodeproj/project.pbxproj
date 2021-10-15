@@ -80,9 +80,9 @@
 				2FD3CD30270DE4ED00DDEA1C /* LoginViewController.swift */,
 				2FD3CD2E270DE45000DDEA1C /* FeedViewController.swift */,
 				2FD3CD32270E027A00DDEA1C /* CameraViewController.swift */,
+				2F846F702714BB65001CBF09 /* ProfileViewController.swift */,
 				2FD3CD34270E13BD00DDEA1C /* PostCell.swift */,
 				2F846F6E27137AE1001CBF09 /* CommentCell.swift */,
-				2F846F702714BB65001CBF09 /* ProfileViewController.swift */,
 				2F66C372270BA58900B3BC5E /* Assets.xcassets */,
 				2F66C377270BA58900B3BC5E /* Info.plist */,
 			);

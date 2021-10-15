@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var profilePicView: UIImageView!
+    @IBOutlet weak var profilePicSavedLabel: UILabel!
     
     let user = PFUser.current()
     
@@ -21,10 +22,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         profileNameLabel.text = user?.username
         
-        let imageData = profilePicView.image!.pngData()
-        let file = PFFileObject(name: "image.png", data: imageData!)
+        let imageFile = user?["profilePic"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
         
-        user!["profilePic"] = file
+        profilePicView.af_setImage(withURL: url)
+        
+        profilePicSavedLabel.isHidden.toggle()
         
         profilePicView.layer.borderWidth = 1
         profilePicView.layer.masksToBounds = false
@@ -39,15 +43,31 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let file = PFFileObject(name: "profileImage.png", data: imageData!)
         
         user!["profilePic"] = file
+        profilePicSavedLabel.isHidden.toggle()
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
+            self.profilePicSavedLabel.isHidden.toggle()
+            timer.invalidate()
+        }
         
         user!.saveInBackground { (success, error) in
             if success {
-                self.dismiss(animated: true, completion: nil)
                 print("saved")
             } else {
                 print("error")
             }
         }
+    }
+    
+    
+    @IBAction func onLibraryButton(_ sender: Any) {
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true, completion: nil)
     }
     
     @IBAction func onProfilePicture(_ sender: Any) {
@@ -63,23 +83,19 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         
         present(picker, animated: true, completion: nil)
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
         
-        let size = CGSize(width: 300, height: 300)
+        let size = CGSize(width: 200, height: 200)
         let scaledImage = image.af_imageAspectScaled(toFill: size)
         
         profilePicView.image = scaledImage
         
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    
+
     /*
     // MARK: - Navigation
 
